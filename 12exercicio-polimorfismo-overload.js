@@ -157,3 +157,4 @@ ahri.ganharExperiencia(80);
 ahri.ganharExperiencia(30);
 ahri.curar(15);
 ahri.curar(15);
+ahri.curar(15);
