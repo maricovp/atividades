@@ -1,34 +1,36 @@
-class personagem {
+class Personagem {
   #nome;
-  #classe;
+  #classes;
   #nivel;
   #vida;
   #mana;
 
-  constructor(nome, classe, nivel, vida, mana) {
+  constructor(nome, classes, nivel, vida, mana) {
     this.#nome = nome;
-    this.#classe = classe;
+    this.#classes = classes;
     this.#nivel = nivel;
     this.#vida = vida;
     this.#mana = mana;
   }
-
+  //Métodos Getters e Setters
+  //Métodos Getter e Setter para atributo nome
   get nome() {
     return this.#nome;
   }
   set nome(nome) {
     this.#nome = nome;
   }
-  get classe() {
-    return this.#classe;
+  //Métodos Getter e Setter para atributo classes
+  get classes() {
+    return this.#classes;
   }
-  set classe(classe) {
-    this.#classe = classe;
+  set classes(classes) {
+    this.#classes = classes;
   }
   get nivel() {
     return this.#nivel;
   }
-  set niveç(nivel) {
+  set nivel(nivel) {
     this.#nivel = nivel;
   }
   get vida() {
@@ -41,86 +43,106 @@ class personagem {
     return this.#mana;
   }
   set mana(mana) {
-    this.#vida = mana;
+    this.#mana = mana;
   }
 
- atacar ( ... args)  
- {
-    if (args.length === 0)
-        console.log(`${this.nome} realizou um ataque normal!`);
-    else if (args.length === 1)
-        console.log(`${this.nome} atacou com um poder de  ${args[0]}`);
-    else if (args.length === 2)
-        console.log(`${this.nome} usou ${args[1]} de poder e atacou com${args[0]} de poder! `);
- else{
-    console.log(`Erro: ${args.length} argumentos fornecidos. Deve ser 0, 1 ou 2.`);
- }
+  //Métodos
+  //Simulando sobrecarga com rest parameter
+  atacar(...args) {
+    if (args.length === 0) {
+      console, log(`${this.#nome} realizou um ataque normal!`);
+    } else if (args.length === 1) {
+      console.log(`${this.#nome} atacou com um poder de ${args[0]}!`);
+    } else if (args.length === 2) {
+      console.log(
+        `${this.#nome} usou ${args[1]} e atacou com ${args[0]} de poder!`
+      );
+    } else {
+      console.log(`Número inválido de argumentos`);
+    }
+  }
 
-defesa() 
-{
-    console.log(`${$this.#nome} se defendeu cp, ${this.#nivel * 2} pontos de defesa`)
-}
+  defesa() {
+    console.log(
+      `#{this.#nome} se defendeu com ${this.#nivel * 2} pontos de defesa`
+    );
+  }
 
-receberDano(Dano) 
-
+  receberDano(dano) {
     this.#vida -= dano;
-    console.log(`${this.#nome} recebeu ${dano} de dano. vida restante ${this.#vida}`);
- }
-}class assassino extends personagem {
- constructor(nome, nivel,vida, mana , furtividade) {
-    super(nome, 'Assassino', nivel, vida, mana);
-    this.furtividade = furtividade;
- }
- atacar( ) {
-    console.log(`${this.nome} ataca silenciosamente com dano adicional pela furtividade!`);
- }
- usarFurtividade( ) {
-    console.log(`${this.nome}usa sua furtividade de nivel ${this.furtividade} para se esconder`)
- }
-} 
-class Paladino extends personagem {
-    constructor (nome, nivel, vida, mana , fe){
+    console.log(
+      `${this.#nome} recebeu ${dano} de dano. Vida restante: ${this.#vida}`
+    );
+  }
+}
+
+class Assassino extends Personagem {
+  constructor(nome, nivel, vida, mana, furtividade) {
+    super(nome, "Assassino", nivel, vida, mana);
+    this.furtividade = furtividade; //Atributo especifico
+  }
+  atacar() {
+    console.log(
+      `${this.nome} ataca silenciosamente com dano adicional pela furtividade!`
+    );
+  }
+
+  usarFurtividade() {
+    console.log(
+      `${this.nome} usa sua furtividade de nivel ${this.furtividade} para se esconder`
+    );
+  }
+}
+class Paladino extends Personagem {
+  constructor(nome, nivel, vida, mana, fe) {
     super(nome, "Paladino", nivel, vida, mana);
-    this.fe = fe;
-    }
-defesa() {
-    defesa()
-    {
-        console.log(`${this.nome} se defendeu com o e4scudo sagrado, absorvendo mais dano com base na fé (${this.fe})`);
-    }
-    }
-    CSSNumericArray() 
-    {
-        console.log( `${this.nome} usa sua fé para curar a si mesmo ou aliados`);
-class Mecanico extends personagem {
-constructor(nome, nivel, vida,mana, engenharia ) {
- super (nome,"Mecanico", nive, vida, mana);
-   this.engenharia = engenharia;
+    this.fe = fe; //Atributo especifico
+  }
 
-}
-receberDano(dano) {
-    const daReduzido = dano - this.engenharia;
-     super.receberDano(danoReduzido);
-     console.log (`${this.nome}usou sua engenharia para reduzir o dano em ${this.engenharia}.`);
-}
+  //Sobrescrevendo o método defesa
+  defesa() {
+    console.log(
+      `${this.nome} se defendeu com o escudo sagrado, absorvendo mais dano com base na fe (${this.fe})!`
+    );
+  }
+
+  //Me´todo especifico
+  curar() {
+    console.log(`${this.mome} usa sua fé para curar a si mesmo ou aliados`);
+  }
 }
 
-construirTorre() 
-{
-    console.log(`${this.nome}construiu uma torre defensiva!`);
-}}} 
-const assassino = new assassino("Luna Sombria", 10, 100, 50, 8 )
+class Mecanico extends Personagem {
+  constructor(nome, nivel, vida, mana, engenharia) {
+    super(nome, "Mecanico", nivel, vida, mana);
+    this.engenharia = engenharia; //Atributo especifico
+  }
+  receberDano(dano) {
+    const danoReduzido = dano - this.engenharia;
+    super.receberDano(danoReduzido);
+    console.log(
+      `${this.nome} usou sua engenharia para reduzir o dano em ${this.engenharia}.`
+    );
+  }
+  construirTorre() {
+    console.log(`${this.nome} construiu uma torre defensiva!`);
+  }
+}
+
+//Criando instancia da classe derivada Assassino
+const assassino = new Assassino("Luna Sombria", 10, 100, 50, 8);
+//Chamando os métodos
 assassino.atacar();
 assassino.usarFurtividade();
 
-const paladino = new Paladino("sir lancelot", 12, 120, 70, 15 );
+//Criando instancia da classe derivada Paladino
+const paladino = new Paladino("Sir Lancelot", 12, 120, 70, 15);
+//Chamando os métodos
+paladino.defesa();
+paladino.curar();
 
- paladino.defesa();
- paladino.Curar();
-
-
- const mecanico = new Mecanico("Roberto das Engrenagens", 8, 90, 40, 5 );
-
- mecanico.receberDano(30);
- mecanico.construirTorre();
- 
+//Criando instancia da classe derivada Mecanico
+const mecanico = new Mecanico("Roberto das Engrenagens", 8, 90, 40, 5);
+//Chamando os métodos
+mecanico.receberDano(30);
+mecanico.construirTorre();
