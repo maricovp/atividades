@@ -22,7 +22,7 @@ class Campeao {
     this.defesa = defesa;
     this.velocidade = velocidade;
     this.habilidade = habilidade;
-    this.critico = critico; 
+    this.critico = critico;  
     this.experiencia = experiencia; 
   }
 
@@ -155,4 +155,5 @@ ahri.atacar(tanque);
 ahri.Habilidade(20);
 ahri.ganharExperiencia(80);
 ahri.ganharExperiencia(30);
+ahri.curar(15);
 ahri.curar(15);
