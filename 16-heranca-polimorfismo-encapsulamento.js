@@ -78,3 +78,20 @@ receberDano(Dano)
     console.log(`${this.nome}usa sua furtividade de nivel ${this.furtividade} para se esconder`)
  }
 } 
+class Paladino extends personagem {
+    constructor (nome, nivel, vida, mana , fe){
+    super(nome, "Paladino", nivel, vida, mana);
+    this.fe = fe;
+    }
+defesa() {
+    defesa()
+    {
+        console.log(`${this.nome} se defendeu com o e4scudo sagrado, absorvendo mais dano com base na fé (${this.fe})`);
+
+    }
+    CSSNumericArray() 
+    {
+        console.log( `${this.nome} usa sua fé para curar a si mesmo ou aliados`);
+    }
+}
+}
