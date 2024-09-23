@@ -87,11 +87,40 @@ defesa() {
     defesa()
     {
         console.log(`${this.nome} se defendeu com o e4scudo sagrado, absorvendo mais dano com base na fé (${this.fe})`);
-
+    }
     }
     CSSNumericArray() 
     {
         console.log( `${this.nome} usa sua fé para curar a si mesmo ou aliados`);
-    }
+class Mecanico extends personagem {
+constructor(nome, nivel, vida,mana, engenharia ) {
+ super (nome,"Mecanico", nive, vida, mana);
+   this.engenharia = engenharia;
+
+}
+receberDano(dano) {
+    const daReduzido = dano - this.engenharia;
+     super.receberDano(danoReduzido);
+     console.log (`${this.nome}usou sua engenharia para reduzir o dano em ${this.engenharia}.`);
 }
 }
+
+construirTorre() 
+{
+    console.log(`${this.nome}construiu uma torre defensiva!`);
+}}} 
+const assassino = new assassino("Luna Sombria", 10, 100, 50, 8 )
+assassino.atacar();
+assassino.usarFurtividade();
+
+const paladino = new Paladino("sir lancelot", 12, 120, 70, 15 );
+
+ paladino.defesa();
+ paladino.Curar();
+
+
+ const mecanico = new Mecanico("Roberto das Engrenagens", 8, 90, 40, 5 );
+
+ mecanico.receberDano(30);
+ mecanico.construirTorre();
+ 
