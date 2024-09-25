@@ -160,4 +160,5 @@ paladino.defesa();
 
 mecanico.mana = 60;
 console.log(`mana modificada: ${mecanico.mana}`);
-mecanico.receberDano(50);
+
+mecanico.receberDano(60);
