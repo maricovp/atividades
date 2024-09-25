@@ -318,7 +318,7 @@ arqueiro.atacar();
 arqueiro.usarFlecha();
 arqueiro.usarFlecha(); // Usando uma flecha a mais
 
-const sacerdote = new Sacerdote("Seraphine", 14, 90, 100, 5, 8, 20, 12, 10, 25);
+const sacerdote = new Sacerdote("Seris", 14, 90, 100, 5, 8, 20, 12, 10, 25);
 sacerdote.defesa();
 sacerdote.curar();
 
