@@ -26,3 +26,22 @@ class Guerreiro extends Personagem {
     }
     }
     
+    class Mago extends Personagem {
+    private string magia;
+
+    public Mago(string nome, string magia)  {
+        super(nome);
+        this.magia = magia;
+    }
+
+    @Override
+    public void atacar() {
+        System.out.println(nome + " lança a magia  " + magia + "!");
+    }
+    
+    @Override
+    public void defender() {
+        System.out.println(nome + "usa um escudo magico para se defender !");
+    }
+    }
+    
