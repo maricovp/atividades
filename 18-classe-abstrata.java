@@ -1,7 +1,7 @@
 abstract class  Personagem {
     protected String nome;
     
-    public personagem(String nome) {
+    public Personagem(String nome) {
         this.nome = nome;
 }
 public abstract void atacar();
@@ -44,4 +44,14 @@ class Guerreiro extends Personagem {
         System.out.println(nome + "usa um escudo magico para se defender !");
     }
     }
-    
+     public class Main{
+          public static void main(String[] args) {
+             Guerreiro guerreiro = new Guerreiro("Ragnarok", "Espada de Ferro");
+             guerreiro.atacar();
+             guerreiro.defender();
+             
+             Mago mago = new Mago("Thor", "Fogo do Dragão");
+             mago.atacar();
+             mago.defender();
+          }
+     }     
