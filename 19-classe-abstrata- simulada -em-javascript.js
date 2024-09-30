@@ -28,3 +28,15 @@ defender ( ) {
         console.log(`${this.nome} utiliza o escudo para se defender}`);
     }
  }
+     class Mago extends Personagem {
+       constructor(nome, magia) {
+         super(nome);
+         this.magia = magia;
+       }
+       atacar() {
+         console.log(`${this.nome} ataca com ${this.magia}`);
+       }
+       defender() {
+         console.log(`${this.nome} invoca um  escudo magico para se defender}`);
+       }
+     }
