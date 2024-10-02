@@ -155,7 +155,7 @@ class Guerreiro extends Personagem {
     console.log(`${this._nome} ataca com ${tipoAtaque} usando ${this._arma}!`);
   }
 
-  // Getters e Setters
+
   get armadura() {
     return this._armadura;
   }
@@ -171,7 +171,7 @@ class Guerreiro extends Personagem {
   }
 }
 
-// Classe Mago
+
 class Mago extends Personagem {
   constructor(
     nome,
@@ -199,7 +199,7 @@ class Mago extends Personagem {
     );
   }
 
-  // Getters e Setters
+
   get nivelMagia() {
     return this._nivelMagia;
   }
@@ -215,7 +215,6 @@ class Mago extends Personagem {
   }
 }
 
-// Classe Arqueiro
 class Arqueiro extends Personagem {
   constructor(
     nome,
@@ -254,7 +253,7 @@ class Arqueiro extends Personagem {
     return `${super.info()}, Tipo de Arco: ${this._tipoArco}`;
   }
 
-  // Getters e Setters
+  
   get tipoArco() {
     return this._tipoArco;
   }
@@ -270,7 +269,7 @@ class Arqueiro extends Personagem {
   }
 }
 
-// Classe Ladino
+
 class Ladino extends Personagem {
   constructor(
     nome,
@@ -307,7 +306,7 @@ class Ladino extends Personagem {
     console.log(`${this._nome} usa a defesa furtiva!`);
   }
 
-  // Getters e Setters
+
   get habilidadeFurtiva() {
     return this._habilidadeFurtiva;
   }
@@ -323,7 +322,7 @@ class Ladino extends Personagem {
   }
 }
 
-// Exemplo de uso
+
 const guerreiro = new Guerreiro(
   "Garen",
   100,
